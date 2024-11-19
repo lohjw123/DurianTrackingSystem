@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.2.7-rc.0/web3.min.js"></script>
+    <script src="../action.js"></script>
+    <meta charset="utf-8" />
+    <title>Retailer - Record</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body onload="accessToMetamask(); accessToContract(); checkRetailerAuthorizationInner();">
+    <header>
+        <a href="../retailer.html">
+            <div id="logo_container">
+                <div id="logo">
+                    <img src="../image/durian_logo.png" alt="logo">
+                </div>
+                <div id="logo_text">DTS</div>
+            </div>
+        </a>
+        <nav class="navbar" id="navbar">
+            <ul>
+                <li><a href="ownerModifyTimelock.html" style="transform: scale(1.2);">Modify Timelock</a></li>
+                <li><a href="recordDurianFromID.html">Display all</a></li>
+                <li><a href="retailerRecord.html">View Record</a></li>
+                <li><a href="addDurian.html">Add Durian</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="tableContainer">
+        <div id="tableSelection">
+            <label for="durianID">Enter Durian ID:</label>
+            <input type="text" id="durianID" placeholder="Durian ID">
+            <button onclick="getDurianDetails()">Get Durian Details</button>
+        </div>
+        <div id="farmerAddingContainer" name="farmFormContainer">
+
+            <div id="farmerAddingTitle">
+                <h2>Modify Durian timelock</h2>
+            </div>
+    
+            <form id="farmerAddingForm" name="durianForm">
+                <div id="add_field_details">
+    
+                    <div class="add_field">
+                        <label for="harvest_date">Harvest Date</label>
+                        <span id="durianHarvestTime"></span>
+                    </div>
+    
+                    <div class="add_field">
+                        <label for="durianRipenTime">Current Ripen Date</label>
+                        <span id="durianRipenTime"></span>
+                    </div>
+    
+                    <div class="add_field">
+                        <label for="ripen_date">New Ripen Date</label>
+                        <input type="date" name="newDurianRipenTime" id="newDurianRipenTime" class="cinput" autocomplete="off"
+                            required onfocus="placeholder='Enter Date Here'" onblur="placeholder=''" />
+                    </div>
+    
+                    <div class="add_field">
+                        <label for="durian_type">Type</label>
+                        <span id="durianVariety"></span>
+                    </div>
+    
+                    <div class="add_field">
+                        <label for="durian_weight">Weight (Kg)</label>
+                        <span id="durianWeight"></span>
+                    </div>
+    
+                    <div class="add_field">
+                        <label for="durian_ID">Durian ID</label>
+                        <span id="durianId"></span>
+                    </div>
+    
+                    <div class="add_field">
+                        <label for="durian_price">Price (ETH)</label>
+                        <span id="durianPrice"></span>
+                    </div>
+
+                    <div id="farmer_function_buttons">
+                        <div class="add_field_button">
+                            <button type="button" value="Modify" class="cbutton" id="cbutton" onclick="modifyTimeLock()">Modify</button>
+                        </div>
+                    </div>
+
+                    
+                    <div id="farmer_function_buttons"></div>
+                        <div class="add_field_button">
+                            <button type="button" value="Modify" class="cbutton" id="cbutton" onclick="cancelTimeLock()">Cancel Timelock</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    
+</body>
+
+
+<script>
+function onTypeSelection() {
+    var typeSelection = document.getElementById("durianType").value;
+
+    if (typeSelection === "Durian") {
+        getDurianDetails();
+    } else {
+        tableRecord.innerHTML = "";
+    }
+}
+
+
+</script>
+
+
+</html>

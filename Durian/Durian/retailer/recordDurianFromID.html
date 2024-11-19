@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.2.7-rc.0/web3.min.js"></script>
+    <script src="../action.js"></script>
+    <meta charset="utf-8" />
+    <title>Retailer - Record</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body onload="accessToMetamask(); accessToContract().then(() => getAllDurianIds()); checkRetailerAuthorizationInner();">
+    <header>
+        <a href="../retailer.html">
+            <div id="logo_container">
+                <div id="logo">
+                    <img src="../image/durian_logo.png" alt="logo">
+                </div>
+                <div id="logo_text">DTS</div>
+            </div>
+        </a>
+        <nav class="navbar" id="navbar">
+            <ul>
+                <li><a href="recordDurianFromID.html" style="transform: scale(1.2);">Display all</a></li>
+                <li><a href="retailerRecord.html">View Record</a></li>
+                <li><a href="addDurian.html">Add Durian</a></li>
+                <li><a href="ownerModifyTimelock.html">Modify Timelock</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="tableContainer">
+        <div id="durianDetailsContainer" class="result">
+            <h2>Durian Details</h2>
+            <div id="durianDetails"></div>
+        </div>
+    </div>
+
+    
+</body>
+
+
+<script>
+function onTypeSelection() {
+        var typeSelection = document.getElementById("durianType").value;
+
+        if (typeSelection === "Durian") {
+            getAllDurianDetails();
+        } else {
+            document.getElementById("durianDetails").innerHTML = ""; // Clear details if category is not Durian
+        }
+    }
+</script>
+
+
+</html>

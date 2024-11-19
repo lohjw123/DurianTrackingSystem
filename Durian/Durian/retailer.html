@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.2.7-rc.0/web3.min.js"></script>
+    <script src="action.js"></script>
+    <meta charset="utf-8" />
+    <title>Retailer</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body onload="accessToMetamask(); accessToContract(); checkRetailerAuthorization();">
+    <header>
+        <a href="index.html">
+            <div id="logo_container">
+
+                <div id="logo">
+                    <img src="image/durian_logo.png" alt="logo">
+                </div>
+
+                <div id="logo_text">RETAILER</div>
+            </div>
+        </a>
+    </header>
+
+    <div id="retailerRow">
+
+        <div id="retailerFunctionDiv">
+            <a href="retailer/recordDurianFromID.html">
+                <img src="image/distributor.png" alt="durianimage">
+                <div class="retailerFunctionButton">
+                    View All Durian 
+                </div>
+            </a>
+        </div>
+
+        <div id="retailerFunctionDiv">
+            <a href="retailer/retailerRecord.html">
+                <img src="image/record.png" alt="retailer image">
+                <div class="retailerFunctionButton">
+                    View Record
+                </div>
+            </a>
+        </div>
+    
+
+        <div id="retailerFunctionDiv">
+            <a href="retailer/addDurian.html">
+                <img src="image/durian_logo.png" alt="retailer image">
+                <div class="retailerFunctionButton">
+                    Add Durian
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div id="retailerRow">
+        <div id="retailerFunctionDiv">
+            <a href="retailer/ownerModifyTimelock.html">
+                <img src="image/record.png" alt="retailer image">
+                <div class="retailerFunctionButton">
+                    Modify Timelock
+                </div>
+            </a>
+        </div>
+
+        <div id="ownerFunctionDiv" style="visibility: hidden;"> </div>
+
+        <div id="ownerFunctionDiv" style="visibility: hidden;"> </div>
+
+
+    </div>
+
+    <div id="ownerRow3">
+        <div id="logoutAccountDiv" onclick="back()">
+            <img src="image/back.png" alt="log out">
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<!--  hahaha-->

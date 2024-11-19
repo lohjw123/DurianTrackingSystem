@@ -1,0 +1,1034 @@
+@font-face {
+    font-family: RobotoCondensed-Light;
+    src: url('RobotoCondensed-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: Abel;
+    src: url('Abel-Regular.ttf') format('truetype');
+}
+
+header {
+    background-color: #aeaca7;
+    border-radius: 2px 2px 15px 15px;
+    margin: 0px;
+}
+
+header a:hover,
+header a:link,
+header a:active,
+header a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+body {
+    background-color: #f2edea;
+}
+
+nav {
+    text-align: center;
+    padding: 5px;
+    padding-top: 15px;
+    background-color: #dfdada;
+    overflow: hidden;
+    border-radius: 0px 0px 15px 15px;
+    display: flex;
+}
+
+nav ul {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    width: 100%;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0% 2.5%;
+}
+
+/* //navigation bar line// */
+.navbar>ul>li>a {
+    display: block;
+    width: 100%;
+    font-size: 25px;
+    /* font-family: Abel; */
+    font-family: fantasy;
+    color: #4e4c49;
+    padding-bottom: 2px;
+    position: relative;
+    margin: 0% 15%;
+    /* padding: 6px 15px 6px 15px; */
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.navbar>ul>li>a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2.5px;
+    background-image: linear-gradient(to right, #000000, #797676);
+    transition: width 0.25s ease-out;
+}
+
+.navbar>ul>li>a:hover::before {
+    width: 100%;
+}
+
+#logo_container {
+    /* border: 7px solid black; */
+    display: flex;
+    padding: 0% 10%;
+    margin: 0%;
+    margin-bottom: 2%;
+}
+
+#logo {
+    display: block;
+    /* border: 7px solid black; */
+    margin: 2%;
+}
+
+#logo_text {
+    /* border: 7px solid black; */
+    display: block;
+    margin: 2%;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 80px;
+    text-align: center;
+    font-family: fantasy;
+    letter-spacing: 15px;
+}
+
+/* Index */
+#indexTitle {
+    margin: 5px auto;
+    padding: 0.5% 15%;
+    width: 70%;
+    text-align: center;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    background-color: #d5dddd;
+    border-radius: 15px;
+}
+
+
+/* Owner */
+#ownerRow,
+#indexRow,
+#farmerRow,
+#distributorRow,
+#retailerRow,
+#consumerRow {
+    display: flex;
+    margin: 0% auto 1% auto;
+    width: 80%;
+}
+
+#ownerRow3 {
+    margin: auto;
+    margin-top: 3%;
+    width: 5%;
+    /* transform: translate(0px, -10px); */
+}
+
+#logoutAccountDiv {
+    text-align: center;
+    width: 100%;
+    padding: 5%;
+    border-radius: 15px;
+    background-color: #c7cac3;
+    box-shadow: 1px 1px 1px black;
+
+}
+
+#logoutAccountDiv img {
+    transform: scale(0.5);
+}
+
+#logoutAccountDiv:hover {
+    transform: scale(1.05);
+    transition: 0.5s;
+    border: 0px;
+    box-shadow: 0px 5px 5px #000000;
+}
+
+#logoutAccountDiv:active {
+    transform: scale(1.05);
+    transition: 0.5s;
+    border: 0px;
+    box-shadow: inset 0px 100% 100% #000000;
+}
+
+#ownerFunctionDiv {
+    text-align: center;
+    width: 100%;
+    margin: 25px;
+    display: block;
+    background-color: #d6d5d1;
+    box-shadow: 1px 1px 1px black;
+    border-radius: 10px;
+    border-width: 0.5px;
+    transition: 0.3s ease-in-out;
+    padding: 10px;
+    margin-bottom: 0px;
+}
+
+#farmerFunctionDiv {
+    text-align: center;
+    width: 100%;
+    margin: 25px;
+    display: block;
+    background-color: #bac3d5;
+    box-shadow: 1px 1px 1px black;
+    border-radius: 10px;
+    border-width: 0.5px;
+    transition: 0.3s ease-in-out;
+    padding: 10px;
+    margin-bottom: 0px;
+}
+
+#distributorFunctionDiv {
+    text-align: center;
+    width: 100%;
+    margin: 25px;
+    display: block;
+    background-color: #97a38f;
+    box-shadow: 1px 1px 1px black;
+    border-radius: 10px;
+    border-width: 0.5px;
+    transition: 0.3s ease-in-out;
+    padding: 10px;
+    margin-bottom: 0px;
+}
+
+#retailerFunctionDiv {
+    text-align: center;
+    width: 100%;
+    margin: 25px;
+    display: block;
+    background-color: #85837b;
+    box-shadow: 1px 1px 1px black;
+    border-radius: 10px;
+    border-width: 0.5px;
+    transition: 0.3s ease-in-out;
+    padding: 10px;
+    margin-bottom: 0px;
+}
+
+#consumerFunctionDiv {
+    text-align: center;
+    width: 100%;
+    margin: 25px;
+    display: block;
+    background-color: #293242;
+    box-shadow: 1px 1px 1px black;
+    border-radius: 10px;
+    border-width: 0.5px;
+    transition: 0.3s ease-in-out;
+    padding: 10px;
+    margin-bottom: 0px;
+}
+
+#loginIndexDiv {
+    text-align: center;
+    width: 100%;
+    margin: 25px;
+    display: block;
+    background-color: #828fa2;
+    box-shadow: 1px 1px 1px black;
+    border-radius: 10px;
+    border-width: 0.5px;
+    transition: 0.3s ease-in-out;
+    padding: 10px;
+    margin-bottom: 0px;
+}
+
+
+
+#ownerFunctionDiv:hover,
+#loginIndexDiv:hover,
+#farmerFunctionDiv:hover,
+#distributorFunctionDiv:hover,
+#retailerFunctionDiv:hover,
+#consumerFunctionDiv:hover {
+    transform: scale(1.15);
+    transition: 0.5s;
+    border: 0px;
+    box-shadow: 0px 5px 10px #000000;
+}
+
+.ownerFunctionButton,
+.indexFunctionButton,
+.farmerFunctionButton,
+.distributorFunctionButton,
+.retailerFunctionButton,
+.consumerFunctionButton {
+    text-align: center;
+    border: 0.2px solid black;
+    width: 70%;
+    margin: 25px auto;
+    display: block;
+    border-radius: 10px;
+    background-color: white;
+    padding: 6%;
+    outline: none;
+    border: none;
+    transition: 0.3s ease-in-out;
+
+    color: black;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 900;
+
+}
+
+#ownerFunctionDiv a,
+#loginIndexDiv a,
+#farmerFunctionDiv a,
+#distributorFunctionDiv a,
+#retailerFunctionDiv a,
+#consumerFunctionDiv a {
+    /* margin: auto; */
+    color: black;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.ownerFunctionButton:hover,
+.indexFunctionButton:hover,
+.farmerFunctionButton:hover,
+.distributorFunctionButton:hover,
+.retailerFunctionButton:hover,
+.consumerFunctionButton:hover {
+    box-shadow: inset 300px 0 0 0 black;
+    transition: 0.5s ease-in-out;
+    color: white;
+}
+
+#ownerFunctionDiv img,
+#loginIndexDiv img,
+#farmerFunctionDiv img,
+#distributorFunctionDiv img,
+#retailerFunctionDiv img,
+#consumerFunctionDiv img {
+    text-align: center;
+    margin: 10% auto;
+    display: block;
+}
+
+#aboutUsContainer {
+    background-color: #EBE4d0;
+    box-shadow: 1px 1px 5px #38240f;
+    padding: 0.5% 3% 0.5% 3%;
+    margin: 2% 25%;
+    border-radius: 10px;
+    font-family: 'Helvetica', sans-serif;
+    line-height: normal;
+    text-align: justify;
+}
+
+#ownerAddingContainer,
+#farmerAddingContainer,
+#distributorAddingContainer,
+#retailerAddingContainer,
+#consumerAddingContainer {
+    background-color: #EBE4d0;
+    box-shadow: 1px 1px 5px #38240f;
+    padding: 0.1% 5% 0.5% 5%;
+    margin: 2% 10%;
+    border-radius: 10px;
+}
+
+#ownerAddingContainer{
+    background-color: #cccdc8;
+}
+
+#farmerAddingContainer{
+    background-color: #d0d8e8;
+    box-shadow: 1px 1px 5px #486090;
+}
+
+#distributorAddingContainer{
+    background-color: #cdd9cf;
+    box-shadow: 1px 1px 5px #8ca08f;
+}
+
+#retailerAddingContainer{
+    background-color: #ccc3b6;
+}
+
+#consumerAddingContainer {
+    background-color: #d8d4c8;
+}
+
+
+#ownerAddingTitle,
+#farmerAddingTitle,
+#distributorAddingTitle,
+#retailerAddingTitle,
+#consumerAddingTitle {
+    font-size: 30px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#ownerAddingForm,
+#farmerAddingForm,
+#distributorAddingForm,
+#retailerAddingForm,
+#consumerAddingForm {
+    margin-left: 5%;
+}
+
+.add_field label {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+form #add_field_details input {
+    width: 70%;
+    height: 35px;
+    outline: none;
+    /* Rmb uncomment if want box */
+    /* border-radius: 5px; */
+    padding-left: 15px;
+    font-size: 15px;
+    margin-bottom: 20px;
+
+    /* Make input field display bottom line only */
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    transition: 0.5s ease;
+    background: transparent;
+}
+
+#owner_function_buttons,
+#farmer_function_buttons,
+#distributor_function_buttons,
+#retailer_function_buttons,
+#consumer_function_buttons {
+    display: flex;
+}
+
+.add_field_button,
+.get_field_button {
+    display: block;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    height: 50px;
+    width: 20%;
+    margin-left: 0px;
+    margin-right: 10%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+
+.add_field_button button,
+.get_field_button button {
+    display: block;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    height: 50px;
+    width: 100%;
+    transition: 0.3s ease-in-out;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    box-shadow: 1px 1px 2px #000000;
+
+}
+
+.add_field_button button:hover,
+.get_field_button button:hover {
+    box-shadow: inset 0px 0px 0px 500px #000000;
+    font-size: 20px;
+    transition: 0.3s ease-in-out;
+    color: white;
+}
+
+.add_field_button button:active,
+.get_field_button button:active {
+    box-shadow: inset 0px 0px 0px 500px #252729;
+    font-size: 20px;
+    transition: 0.1s ease-in-out;
+    color: white;
+}
+
+.add_field_button button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+#tableSelection label {
+    font-size: 30px;
+    font-family: fantasy;
+    font-weight: 100;
+}
+
+#tableSelection select {
+    background-color: #cccdc8;
+    border: none;
+    border-bottom: #000000 solid 1px;
+    border-radius: 0px;
+    padding-bottom: 1.5px;
+    transform: translate(-10px, -5px);
+    font-family: abel;
+    font-size: 25px;
+    font-weight: bold;
+    width: 100%;
+}
+
+#tableContainer {
+    /* border: solid 7px black; */
+    margin: 3% 1%;
+    border-radius: 15px;
+    height: 100%;
+    padding: 2% 3%;
+    background-color: #cccdc8;
+    text-align: left;
+    box-shadow: 1px 1px 5px #000000;
+
+}
+
+#tableSelection {
+    padding: 0% 2%;
+    margin-bottom: 2%;
+}
+
+#tableSelection label,
+#tableSelection select {
+    display: inline-block;
+    margin: 1% 1%;
+}
+
+#tableData {
+    width: 100%;
+    background-color: #b1b4aa;
+    border-collapse: collapse;
+    border: none;
+}
+
+#tableData td,
+#tableData th {
+    padding: 20px;
+}
+
+#tableHeaderData {
+    font-size: 20px;
+    font-family: fantasy;
+    font-weight: 200;
+    letter-spacing: 1px;
+    border-top: 0px;
+    background-color: #7e8480;
+}
+
+#tableRecord {
+    overflow: hidden;
+    border-collapse: collapse;
+    border-radius: 15px;
+    border: 1px solid black;
+    /* box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2); */
+    /* font-family: RobotoCondensed-Light; */
+}
+
+#tableRecord:last-child tr:last-child td {
+    border-right: 0px;
+    border-bottom: 0px;
+}
+
+#tableRecord tr td:first-child {
+    border-left: 0px;
+}
+
+#tableRecord tr td:last-child {
+    border-right: 0px;
+}
+
+table#tableRecord tr th {
+    /* border-top: 1px solid transparent; */
+    border-left: 0px;
+    border-right: 0px;
+}
+
+#tableRecord th,
+#tableRecord td {
+    border: 0.25px solid #ffffff;
+    border-top: none;
+}
+
+
+#tableRecord td {
+    font-family: Abel;
+    font-size: large;
+    font-weight: 600;
+}
+
+#tableRecord th:first-child {
+    border-left: none;
+}
+
+#tableRecord th:last-child {
+    border-right: black;
+}
+
+#tableRecord th {
+    text-transform: uppercase;
+}
+
+#tableRecord tr td:first-child {
+    width: 20%;
+}
+
+
+/* Style for the options */
+option {
+    font-size: 16px;
+    color: #444;
+}
+
+.radio-buttons {
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    break-before: always;
+    margin: 2%;
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px #000000;
+    transition: 0.3s;
+}
+
+.radio-buttons:hover {
+    transform: scale(1.1);
+    box-shadow: 1px 1px 10px #000000;
+    transition: 0.3s;
+}
+
+.radio-buttons label {
+    transform: translate(-20px, -3px);
+    margin: auto;
+    margin-right: 0%;
+}
+
+.radio-buttons input[type="radio"] {
+    transform: scale(0.6);
+    transform-origin: bottom;
+  }
+
+  .ratingForm #consumer_function_buttons {
+    margin-top: 2%;
+  }
+
+#toRetailerTable {
+    /* border: black solid 7px; */
+    width: 100%;
+    margin: auto;
+    margin-bottom: 3%;
+}
+
+#toRetailerTable:last-child tr:last-child td {
+    border-right: 0px;
+    border-bottom: 0px;
+}
+
+#toRetailerTable tr td:first-child {
+    border-left: 0px;
+}
+
+#toRetailerTable tr td:last-child {
+    border-right: 0px;
+}
+
+table#toRetailerTable tr th {
+    /* border-top: 1px solid transparent; */
+    border-left: 0px;
+    border-right: 0px;
+}
+
+#toRetailerTable th,
+#toRetailerTable td {
+    border: 0.25px solid #ffffff;
+    border-top: none;
+    text-align: left;
+}
+
+
+#toRetailerTable td {
+    font-family: Abel;
+    font-size: large;
+}
+
+#toRetailerTable th:first-child {
+    border-left: none;
+}
+
+#toRetailerTable th:last-child {
+    border-right: black;
+}
+
+#tableRecord th {
+    text-transform: uppercase;
+}
+
+#toRetailerTable tr td:first-child {
+    width: 20%;
+}
+
+#toRetailerTable tr:last-child {
+    border-bottom: none;
+}
+
+#retailerTableHeaderData {
+    font-size: 20px;
+    font-family: abel;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-top: 0px;
+    background-color: #b2c6c4;
+}
+
+#retailerTable {
+    width: 100%;
+    background-color: #dfe0db;
+    border-collapse: collapse;
+    border: none;
+
+}
+
+#retailerTable td,
+#retailerTable th {
+    padding: 10px;
+    text-align: center;
+}
+
+#retailerTable input {
+    background-color: #dfe0db;
+    border: none;
+    border-bottom: #000000 solid 1px;
+    text-align: center;
+    width: 50%;
+    font-size: 15px;
+    display: block;
+    margin: auto;
+    font-family: abel;
+
+}
+
+#retailerTable input:focus {
+    outline: none;
+}
+
+#toRetailerTable {
+    border-radius: 50px;
+}
+
+#fromDistributorTable {
+    /* border: black solid 7px; */
+    width: 100%;
+    margin: auto;
+    margin-bottom: 3%;
+}
+
+#fromDistributorTable:last-child tr:last-child td {
+    border-right: 0px;
+    border-bottom: 0px;
+}
+
+#fromDistributorTable tr td:first-child {
+    border-left: 0px;
+}
+
+#fromDistributorTable tr td:last-child {
+    border-right: 0px;
+}
+
+table#fromDistributorTable tr th {
+    /* border-top: 1px solid transparent; */
+    border-left: 0px;
+    border-right: 0px;
+}
+
+#fromDistributorTable th,
+#fromDistributorTable td {
+    border: 0.25px solid #ffffff;
+    border-top: none;
+    text-align: left;
+}
+
+
+#fromDistributorTable td {
+    font-family: Abel;
+    font-size: large;
+}
+
+#fromDistributorTable th:first-child {
+    border-left: none;
+}
+
+#fromDistributorTable th:last-child {
+    border-right: black;
+}
+
+#tableRecord th {
+    text-transform: uppercase;
+}
+
+#fromDistributorTable tr td:first-child {
+    width: 20%;
+}
+
+#fromDistributorTable tr:last-child {
+    border-bottom: none;
+}
+
+#distributorTableHeaderData {
+    font-size: 20px;
+    font-family: abel;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-top: 0px;
+    background-color: #bdb6aa;
+}
+
+#distributorTable {
+    width: 100%;
+    background-color: #e7e6dc;
+    border-collapse: collapse;
+    border: none;
+
+}
+
+#distributorTable td,
+#distributorTable th {
+    padding: 10px;
+    text-align: center;
+}
+
+#distributorTable input[type="checkbox"] {
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+
+}
+
+#fromDistributorTable {
+    border-radius: 50px;
+}
+
+#fromFarmerTable {
+    /* border: black solid 7px; */
+    width: 100%;
+    margin: auto;
+    margin-bottom: 3%;
+}
+
+#fromFarmerTable:last-child tr:last-child td {
+    border-right: 0px;
+    border-bottom: 0px;
+}
+
+#fromFarmerTable tr td:first-child {
+    border-left: 0px;
+}
+
+#fromFarmerTable tr td:last-child {
+    border-right: 0px;
+}
+
+table#fromFarmerTable tr th {
+    /* border-top: 1px solid transparent; */
+    border-left: 0px;
+    border-right: 0px;
+}
+
+#fromFarmerTable th,
+#fromFarmerTable td {
+    border: 0.25px solid #ffffff;
+    border-top: none;
+    text-align: left;
+}
+
+
+#fromFarmerTable td {
+    font-family: Abel;
+    font-size: large;
+}
+
+#fromFarmerTable th:first-child {
+    border-left: none;
+}
+
+#fromFarmerTable th:last-child {
+    border-right: black;
+}
+
+#tableRecord th {
+    text-transform: uppercase;
+}
+
+#fromFarmerTable tr td:first-child {
+    width: 20%;
+}
+
+#fromFarmerTable tr:last-child {
+    border-bottom: none;
+}
+
+#farmerTableHeaderData {
+    font-size: 20px;
+    font-family: abel;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-top: 0px;
+    background-color: #a9b8a9;
+}
+
+#farmerTable {
+    width: 100%;
+    background-color: #e7e6dc;
+    border-collapse: collapse;
+    border: none;
+
+}
+
+#farmerTable td,
+#farmerTable th {
+    padding: 10px;
+    text-align: center;
+}
+
+#farmerTable input[type="checkbox"] {
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+
+}
+
+#fromFarmerTable {
+    border-radius: 50px;
+}
+
+#fromFarmerTable p, #toRetailerTable p, #fromDistributorTable p, #tableRecord p{
+    font-family: abel;
+    font-size: 30px;
+    color: red;
+    font-weight: bold;
+}
+
+#tableContainer {
+    /* border: solid 7px black; */
+    margin: 3% 1%;
+    border-radius: 15px;
+    height: 100%;
+    padding: 2% 3%;
+    background-color: #cccdc8;
+    text-align: left;
+    box-shadow: 1px 1px 5px #000000;
+
+}
+
+
+#tableData {
+    width: 100%;
+    background-color: #b1b4aa;
+    border-collapse: collapse;
+    border: none;
+}
+
+#tableData td,
+#tableData th {
+    padding: 20px;
+}
+
+#tableHeaderData {
+    font-size: 20px;
+    font-family: fantasy;
+    font-weight: 200;
+    letter-spacing: 1px;
+    border-top: 0px;
+    background-color: #7e8480;
+}
+
+#durianTable {
+    width: 100%;
+    font-size: large;
+    margin: 2%;
+    padding: 0%;
+    border-collapse: collapse;
+
+}
+
+#durianTable td{
+    width: 100%;
+    font-size: large;
+    font-family: abel;
+    border: #858378 solid 1px;
+}
+
+#durianTable tr td:first-child{
+    text-align: right;
+    width: 20%;
+    font-weight: bold;
+    /* background-color: #cec1ae; */
+    background-color: #ccc3b6;
+    padding: 1.5% 2% 1.5% 5%;
+}
+
+#durianTable tr td:last-child{
+    width: 40%;
+    margin-right: 0%;
+    background-color: #e7e6dc;
+    padding: 1% 5% 1% 2%;
+
+}
+
+
+
+
+#durianType, #mySelect{
+    display: block;
+    width: 30%;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #444;
+    background-color: none;
+    border: none;
+    box-shadow: none;
+    transition: border-color 0.2s ease-in-out;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-family: abel;
+    color: #000000;
+    font-weight: bold;
+}
+
+/* Style for the select element when it's focused */
+#durianType:focus, #mySelect:focus {
+    outline: none;
+    border-color: #000000;
+}
+/* 
+#mySelect{
+    border: 7px solid black;
+} */

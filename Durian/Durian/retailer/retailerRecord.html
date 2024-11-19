@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.2.7-rc.0/web3.min.js"></script>
+    <script src="../action.js"></script>
+    <meta charset="utf-8" />
+    <title>Retailer - Record</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body onload="accessToMetamask(); accessToContract(); checkRetailerAuthorizationInner();">
+    <header>
+        <a href="../retailer.html">
+            <div id="logo_container">
+                <div id="logo">
+                    <img src="../image/durian_logo.png" alt="logo">
+                </div>
+                <div id="logo_text">DTS</div>
+            </div>
+        </a>
+        <nav class="navbar" id="navbar">
+            <ul>
+                <li><a href="recordDurianFromID.html">Display all</a></li>
+                <li><a href="retailerRecord.html" style="transform: scale(1.2);">View Record</a></li>
+                <li><a href="addDurian.html">Add Durian</a></li>
+                <li><a href="ownerModifyTimelock.html">Modify Timelock</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="tableContainer">
+        <div id="tableSelection">
+            <label for="durianID">Enter Durian ID:</label>
+            <input type="text" id="durianID" placeholder="Durian ID"  class="cinput" autocomplete="off"
+            required onfocus="placeholder='Enter Durian ID Here'" onblur="placeholder=''">
+            <button onclick="getDurianDetails()">Get Durian Details</button>
+            <!-- <select name="cinput" id="durianType" style="width: 25%;" onchange="onTypeSelection()">
+                <option value="">Please Choose Category</option>
+                <option value="Durian">Durian</option>
+                <option value="Farm">Farm</option>
+            </select> -->
+        </div>
+        <div class="result">
+            <h2>Durian Details</h2>
+            <p><strong>ID:</strong> <span id="durianId"></span></p>
+            <p><strong>Variety:</strong> <span id="durianVariety"></span></p>
+            <p><strong>Price:</strong> <span id="durianPrice"></span></p>
+            <p><strong>Weight:</strong> <span id="durianWeight"></span></p>
+            <p><strong>Harvest Time:</strong> <span id="durianHarvestTime"></span></p>
+            <p><strong>Ripen Time:</strong> <span id="durianRipenTime"></span></p>
+        </div>
+    </div>
+
+    
+</body>
+
+
+<script>
+function onTypeSelection() {
+    var typeSelection = document.getElementById("durianType").value;
+
+    if (typeSelection === "Durian") {
+        getDurianDetails();  // Trigger getDurianDetails function
+    } else if (typeSelection === "Farm") {
+        tableRecord.innerHTML = ""; // You can add farm-related logic here
+    } else {
+        tableRecord.innerHTML = "";
+    }
+}
+</script>
+
+
+</html>

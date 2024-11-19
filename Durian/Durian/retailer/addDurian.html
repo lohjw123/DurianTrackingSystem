@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.2.7-rc.0/web3.min.js"
+    ></script>
+    <script src="../action.js"></script>
+    <meta charset="utf-8" />
+    <title>Farmer - Record Harvest Durian</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Style for the label */
+
+      /* Style for the select element */
+    </style>
+  </head>
+
+  <body onload="accessToMetamask(); accessToContract(); getNextDurianId(); checkRetailerAuthorizationInner();">
+    <header>
+      <a href="../retailer.html">
+        <div id="logo_container">
+          <div id="logo">
+            <img src="../image/durian_logo.png" alt="logo" />
+          </div>
+
+          <div id="logo_text">DTS</div>
+        </div>
+      </a>
+      <nav class="navbar" id="navbar">
+        <ul>
+          <li><a href="recordDurianFromID.html">Display all</a></li>
+          <li><a href="retailerRecord.html">View Record</a></li>
+          <li>
+            <a href="addDurian.html" style="transform: scale(1.2)"
+              >Add Durian</a
+            >
+          </li>
+          <li><a href="ownerModifyTimelock.html">Modify Timelock</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="farmerAddingContainer" name="farmFormContainer">
+      <div id="farmerAddingTitle">
+        <h2>Add Harvest Durian</h2>
+      </div>
+
+      <form id="farmerAddingForm" name="durianForm">
+        <div id="add_field_details">
+          <div class="add_field">
+            <label for="harvest_date">Harvest Date</label>
+            <input
+              type="date"
+              name="durianHarvestDate"
+              id="durianHarvestDate"
+              class="cinput"
+              autocomplete="off"
+              required
+              onfocus="placeholder='Enter Date Here'"
+              onblur="placeholder=''"
+            />
+          </div>
+
+          <div class="add_field">
+            <label for="ripen_date">Ripen Date</label>
+            <input
+              type="date"
+              name="durianRipenDate"
+              id="durianRipenDate"
+              class="cinput"
+              autocomplete="off"
+              required
+              onfocus="placeholder='Enter Date Here'"
+              onblur="placeholder=''"
+            />
+          </div>
+
+          <div class="add_field">
+            <label for="durian_type">Type</label>
+            <select name="cinput" id="durianType">
+              <option value="Black Pearl">Black Pearl</option>
+              <option value="Black Thorn">Black Thorn</option>
+              <option value="D101">D101</option>
+              <option value="D13">D13</option>
+              <option value="D24">D24</option>
+              <option value="Golden Phoenix">Golden Phoenix</option>
+              <option value="IOI">IOI</option>
+              <option value="Kampung">Kampung</option>
+              <option value="Lao Tai Po">Lao Tai Po</option>
+              <option value="Musang King">Musang King</option>
+              <option value="Red Prawn">Red Prawn</option>
+              <option value="Tekka">Tekka</option>
+              <option value="Tupai King">Tupai King</option>
+              <option value="XO">XO</option>
+            </select>
+            <!-- <input type="text" name="durianType" id="durianType" class="cinput" autocomplete="off" required
+                        onfocus="placeholder='Enter Type Here'" onblur="placeholder=''" /> -->
+          </div>
+
+          <div class="add_field">
+            <label for="durian_weight">Weight (Kg)</label>
+            <input
+              type="text"
+              name="durianWeight"
+              id="durianWeight"
+              class="cinput"
+              autocomplete="off"
+              required
+              onfocus="placeholder='Enter Weight Here'"
+              onblur="placeholder=''"
+            />
+          </div>
+
+          <div class="add_field">
+            <label for="durian_ID">Durian ID</label>
+            <input
+              type="text"
+              name="durianID"
+              id="durianID"
+              class="cinput"
+              autocomplete="off"
+              readonly
+              required
+            />
+          </div>
+
+          <div class="add_field">
+            <label for="durian_price">Price</label>
+            <input
+              type="text"
+              name="durianPrice"
+              id="durianPrice"
+              class="cinput"
+              autocomplete="off"
+              required
+              onfocus="placeholder='Enter Price Here'"
+              onblur="placeholder=''"
+            />
+          </div>
+
+          <div id="farmer_function_buttons">
+            <div class="add_field_button">
+              <button
+                type="button"
+                value="Add"
+                class="cbutton"
+                id="cbutton"
+                onclick="recordHarvestDurian()"
+              >
+                Record
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+      document.getElementById("cbutton").disabled = true;
+    });
+
+    ["durianHarvestDate", "durianType", "durianWeight"].forEach((field) =>
+      document.getElementById(field).addEventListener("input", validateFields5)
+    );
+
+    const getNextDurianId = async () => {
+      try {
+        const accounts = await ethereum.request({
+          method: "eth_requestAccounts",
+        });
+        const account = accounts[0];
+
+        if (!window.contract) {
+          console.error("Contract is not initialized.");
+          return;
+        }
+
+        // Fetch the existing durian IDs from the contract
+        const durianIds = await window.contract.methods
+          .getDurianIds()
+          .call({ from: account });
+
+        // Find the latest durian ID
+        const lastDurianId =
+          durianIds.length > 0 ? parseInt(durianIds[durianIds.length - 1]) : 0;
+
+        // Calculate the next durian ID
+        const nextDurianId = lastDurianId + 1;
+
+        // Set the next ID in the form field
+        document.getElementById("durianID").value = nextDurianId;
+        document.getElementById("durianID").readOnly = true; // Make it readonly so the user can't change it
+      } catch (error) {
+        console.error("Error fetching the next Durian ID:", error);
+      }
+    };
+
+    async function setNextDurianId() {
+      try {
+        const accounts = await ethereum.request({
+          method: "eth_requestAccounts",
+        });
+        const account = accounts[0];
+
+        if (!window.contract) {
+          console.error("Contract is not initialized.");
+          return;
+        }
+
+        // Get all existing durian IDs
+        const durianIds = await window.contract.methods
+          .getDurianIds()
+          .call({ from: account });
+        console.log("Durian IDs: ", durianIds);
+
+        let nextId = 1; // Default if no records exist
+
+        if (durianIds.length > 0) {
+          // Get the maximum ID and increment it by 1
+          const maxId = Math.max(...durianIds.map(Number));
+          nextId = maxId + 1;
+        }
+
+        // Set the next ID in the form's input field
+        document.getElementById("durianID").value = nextId;
+      } catch (error) {
+        console.error("Error setting Durian ID:", error);
+      }
+    }
+  </script>
+</html>
+
+<!--  hahaha-->

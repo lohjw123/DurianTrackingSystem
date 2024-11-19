@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.2.7-rc.0/web3.min.js"></script>
+    <script src="action.js"></script>
+    <meta charset="utf-8" />
+    <title>Consumer</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body onload="accessToContract()">
+    <header>
+        <a href="index.html">
+        <div id="logo_container">
+            <div id="logo">
+                <img src="image/durian_logo.png" alt="logo" >
+            </div>
+
+            <div id="logo_text">CONSUMER</div>
+        </div>
+        </a>
+    </header>
+
+    <div id="consumerRow">
+
+        <div id="consumerFunctionDiv" onclick="accessToMetamask()">
+            <a href="consumer/consumerLogin.html">
+                <img src="image/customerLogin.png" alt="durianimage">
+                <div class="consumerFunctionButton" onclick="login('Consumer')">
+                    Login
+                </div>
+        </div>
+
+        <div id="consumerFunctionDiv">
+            <a href="consumer/aboutus.html">
+                <img src="image/aboutus.png" alt="aboutus image">
+                <div class="consumerFunctionButton">
+                    About Us
+                </div>
+            </a>
+        </div>
+
+        <div id="ownerFunctionDiv" style="visibility: hidden;"> </div>
+
+
+    </div>
+
+    <div id="ownerRow3">
+        <div id="logoutAccountDiv" onclick="back()">
+            <img src="image/back.png" alt="log out">
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+
